@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>Technica | All-Ladies Hackathon</title>
+  <!--
+
+  ████████╗ ███████╗  ██████╗ ██╗  ██╗ ███╗   ██╗ ██╗  ██████╗  █████╗
+  ╚══██╔══╝ ██╔════╝ ██╔════╝ ██║  ██║ ████╗  ██║ ██║ ██╔════╝ ██╔══██╗
+     ██║    █████╗   ██║      ███████║ ██╔██╗ ██║ ██║ ██║      ███████║
+     ██║    ██╔══╝   ██║      ██╔══██║ ██║╚██╗██║ ██║ ██║      ██╔══██║
+     ██║    ███████╗ ╚██████╗ ██║  ██║ ██║ ╚████║ ██║ ╚██████╗ ██║  ██║
+     ╚═╝    ╚══════╝  ╚═════╝ ╚═╝  ╚═╝ ╚═╝  ╚═══╝ ╚═╝  ╚═════╝ ╚═╝  ╚═╝
+
+   -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="All-ladies hackathon at University of Maryland.">
+  <meta name="robots" content="NOODP, index, follow">
+  <meta itemprop="name" content="Technica">
+  <meta itemprop="description" content="All-ladies hackathon at University of Maryland.">
+  <meta itemprop="image" content="/img/logo-black.png">
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@gotechnica">
+  <meta name="twitter:title" content="Technica">
+  <meta name="twitter:description" content="All-ladies hackathon at University of Maryland.">
+  <meta name="twitter:creator" content="@gotechnica">
+  <meta name="twitter:image:src" content="http://gotechnica.org/img/logo-black.png">
+  <meta name="twitter:domain" content="http://gotechnica.org">
+
+  <!-- Open Graph data (Facebook) -->
+  <meta property="og:title" content="Technica">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://gotechnica.org">
+  <meta property="og:image" content="http://gotechnica.org/img/logo-black.png">
+  <meta property="og:description" content="All-ladies hackathon at University of Maryland.">
+
+  <!-- Theme Color -->
+
+  <meta name="theme-color" content="#00ffff">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="http://gotechnica.org/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://gotechnica.org/favicon.ico" type="image/x-icon">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/style.css">
+
+  <!-- Google Analytics -->
+
+</head>
+
+<body>
+
+  <header>
+    <div class="content">
+      <a href="javascript:void(0)">
+        <img src="./img/technica-logo-white.svg">
+      </a>
+    </div>
+  </header>
+
+  <!-- TITLE -->
+  <section id="register">
+    <div class="content hero">
+      <div>
+        <h1>#DRONEPOLLOCK</h1>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+  <!-- Live Stream -->
+  <section id="youtube">
+    <div class="video-container">
+      <div class="video">
+        <iframe src="http://www.ustream.tv/embed/21472191?html5ui&showtitle=false" style="border: 0 none transparent;" webkitallowfullscreen allowfullscreen frameborder="no" width="1200" height="675">
+        </iframe>
+      </div>
+    </div>
+    <!-- User Identity -->
+    <div class="content">
+      <div class="section-header">
+        <h2 id="info"></h2>
+      </div>
+    </div>
+    <!-- Participate Button -->
+    <div class="content">
+      <a href="#diagram" class="button register-button" data-scroll>Participate</a>
+    </div>
+  </section>
+  <!-- Diagram -->
+  <hr>
+  <section id="diagram">
+    <div>
+      <h2>Leave your Mark</h2>
+    </div>
+    <div class="content">
+      <h3>Pick a point on the map below to remotely fly a drone and drop paint on our 20ft canvas!</h3>
+    </div>
+    <div id="paintmap" class="paintmap">
+      <!-- cmyk by iconsmind.com from the Noun Project -->
+      <div id="cursor"></div>
+      <img src="./img/technica-logo-gray.svg">
+    </div>
+    <form id="form" role="form" method="post" action="/drop">
+      <div class='form-error'>Please select a point on the map.</div>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" name="name" class="form-control" id="text" placeholder="Name">
+        <div class='form-error'>Please enter your name.</div>
+      </div>
+      <div class="form-group">
+        <label for="location">Location:</label>
+        <input type="text" name="location" class="form-control" id="text" placeholder="Location (ex. College Park, MD)">
+        <div class='form-error'>Please enter your location. </div>
+      </div>
+      <input type="hidden" id="xcoord" name="xcoord">
+      <input type="hidden" id="ycoord" name="ycoord">
+      <button type="submit" class="button register-button">Drop!</button>
+    </form>
+  </section>
+  <hr class="line">
+  <footer>
+    <div id="sponsors">
+      <div class="section-header">
+        <h2>Sponsored By</h2>
+      </div>
+      <div class="logos">
+        <ul>
+          <li>
+            <a href="https://mlh.io" target="_blank"><img src="img/mlh-logo.svg"></a>
+          </li>
+          <li>
+            <a href="http://startupshell.org" target="_blank"><img src="img/shell-logo_text-color.svg"></a>
+          </li>
+          <li>
+            <a href="http://www.thedchive.com/"><img src="img/hive-logo.png"></a>
+          </li>
+          <li>
+            <a href="http://www.upperstack.com/"><img src="img/logo_upperstack.svg"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="content">
+      <ul>
+        <li><a href="https://twitter.com/stefcohen3" target="_blank">Stef</a></li>
+        <li><a href="https://www.twitter.com/nickaversano" target="_blank">Nick</a></li>
+        <li><a href="#">Github</a></li>
+      </ul>
+    </div>
+  </footer>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script type="text/javascript" src="./js/smooth-scroll.min.js"></script>
+  <script type="text/javascript" src="./js/main.js"></script>
+
+</body>
+
+</html>
