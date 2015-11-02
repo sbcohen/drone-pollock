@@ -1,7 +1,7 @@
 require 'sinatra'
 require 'sinatra/json'
 require './db'
-require 'FileUtils'
+require 'fileutils'
 
 #main page
 get '/' do
