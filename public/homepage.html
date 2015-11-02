@@ -106,23 +106,32 @@
       <!-- cmyk by iconsmind.com from the Noun Project -->
       <div id="cursor"></div>
       <img src="./img/technica-logo-gray.svg">
+      <canvas id="canvas">
+      </canvas>
     </div>
-    <form id="form" role="form" method="post" action="/drop">
-      <div class='form-error'>Please select a point on the map.</div>
-      <div class="form-group">
-        <label for="name">Name:</label>
-        <input type="text" name="name" class="form-control" id="text" placeholder="Name">
-        <div class='form-error'>Please enter your name.</div>
-      </div>
-      <div class="form-group">
-        <label for="location">Location:</label>
-        <input type="text" name="location" class="form-control" id="text" placeholder="Location (ex. College Park, MD)">
-        <div class='form-error'>Please enter your location. </div>
-      </div>
-      <input type="hidden" id="xcoord" name="xcoord">
-      <input type="hidden" id="ycoord" name="ycoord">
-      <button type="submit" class="button register-button">Drop!</button>
-    </form>
+    <div id="form-fade">
+      <form id="form" role="form" method="post" action="/drop">
+        <div class='form-error'>Please select a point on the map.</div>
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" name="name" class="form-control" id="text" placeholder="Name">
+          <div class='form-error'>Please enter your name.</div>
+        </div>
+        <div class="form-group">
+          <label for="location">Location:</label>
+          <input type="text" name="location" class="form-control" id="text" placeholder="Location (ex. College Park, MD)">
+          <div class='form-error'>Please enter your location. </div>
+        </div>
+        <input type="hidden" id="xcoord" name="xcoord">
+        <input type="hidden" id="ycoord" name="ycoord">
+        <button type="submit" class="button register-button">Drop!</button>
+      </form>
+    </div>
+    <div id="success" style="display:none">
+      <h2>Success!</h2>
+      <h3>Thanks for participating! Watch our live stream to see your splatter.</h3>
+      <a href="https://twitter.com/intent/tweet?text=I%20just%20left%20my%20mark%20on%20%23dronepollock%20http://drone.gotechnica.org" target="_blank" class="button register-button">Tweet about us!</a>
+    </div>
   </section>
   <hr class="line">
   <footer>
@@ -151,7 +160,7 @@
       <ul>
         <li><a href="https://twitter.com/stefcohen3" target="_blank">Stef</a></li>
         <li><a href="https://www.twitter.com/nickaversano" target="_blank">Nick</a></li>
-        <li><a href="#">Github</a></li>
+        <li><a href="https://github.com/sbcohen/drone-pollock">View project on Github</a></li>
       </ul>
     </div>
   </footer>

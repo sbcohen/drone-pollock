@@ -347,6 +347,12 @@ iframe {
   overflow: hidden;
 }
 
+
+/*.paintmap img {
+  position: relative;
+  z-index: 1;
+}*/
+
 #diagram {
   text-align: center;
 }
@@ -439,7 +445,8 @@ form {
   animation-fill-mode: both;
   font-size: 0;
   position: relative;
-  margin-bottom: 2rem
+  margin-bottom: 2rem;
+  transition: opacity 500ms;
 }
 
 form .form-group {
@@ -1153,7 +1160,8 @@ footer ul li {
   width: 100%;
 }
 
-#cursor {
+#cursor,
+.drop {
   position: absolute;
   top: -40px;
   left: -40px;
@@ -1162,6 +1170,19 @@ footer ul li {
   width: 30px;
   height: 30px;
   background-image: url(../img/crosshair.png);
+  z-index: 2;
+}
+
+.drop {
+  background-image: none;
+}
+
+.drop.cyan {
+  background: cyan;
+}
+
+.drop.pink {
+  background: #ff7bac;
 }
 
 .form-error {
@@ -1180,4 +1201,21 @@ footer ul li {
   #clockdiv {
     font-size: 5rem;
   }
+}
+
+#success {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+#success .button {
+  margin: 1rem auto;
+}
+
+#canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
 }

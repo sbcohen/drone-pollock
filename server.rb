@@ -11,7 +11,7 @@ get '/' do
     cache_control :public, :must_revalidate, max_age:0 
     File.read(File.join('public', 'countdown.html'))
   else 
-    File.read(File.join('public', 'index.html'))
+    File.read(File.join('public', 'homepage.html'))
   end
 end
 

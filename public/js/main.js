@@ -2,8 +2,10 @@ var cursor = document.getElementById("cursor");
 var paintmap = $("#paintmap");
 var xcoord = document.getElementById("xcoord");
 var ycoord = document.getElementById("ycoord");
+var submit = false;
 
 $('#paintmap').click(function (event) {
+  if (submit) return false;
   var offset = paintmap.offset();
   var x = event.pageX - offset.left;
   var y = event.pageY - offset.top;
@@ -27,7 +29,7 @@ smoothScroll.init();
 function update() {
   $.get('/drops/current', function (data) {
     var info = $("#info");
-    info.html(data["name"] + ' &ndash; ' + data["location"] + data['id']);
+    info.html(data["name"] + ' &ndash; ' + data["location"]);
   });
 }
 update();
@@ -52,6 +54,15 @@ $(form).submit(function () {
     $(location).focus();
     return false;
   }
+
+  $.post($(this).attr('action'), $(this).serialize(), function (data, textStatus) {
+    if (textStatus == 'success') {
+      $('#form-fade').hide();
+      $('#success').show().addClass('fade-in-up');
+      submit = true;
+    }
+  });
+  return false;
 });
 
 $(form).find("input[name='name']").keypress(function () {
@@ -60,3 +71,38 @@ $(form).find("input[name='name']").keypress(function () {
 $(form).find("input[name='location']").keypress(function () {
   $(this).next().hide();
 });
+
+$(document).ready(function () {
+  var c = document.getElementById("canvas");
+  var ctx = c.getContext("2d");
+  c.width = paintmap.outerWidth();
+  c.height = paintmap.outerHeight();
+  var width = c.width;
+  var height = c.height;
+  //get drop
+  ctx.imageSmoothingEnabled = false;
+  $.get('/drops', function (data) {
+    ctx.globalAlpha = 0.8;
+    ctx.fillStyle = 'cyan';
+    for (var i = 0; i < data.drops.length; i++) {
+      var drop = data.drops[i];
+      var xcoord = Math.floor(drop.xcoord * width / 100);
+      var ycoord = Math.floor(drop.ycoord * height / 100);
+      //ctx.fillRect(xcoord, ycoord, 10, 10);
+      circle(ctx, xcoord, ycoord, 10);
+      if (i % 2 == 0)
+        ctx.fillStyle = '#ff7bac';
+      else ctx.fillStyle = 'cyan';
+    }
+  });
+  //get xcoord ycoord
+  //set color
+  //draw dot
+  //get next drop
+});
+
+function circle(ctx, x, y, rad) {
+  ctx.beginPath();
+  ctx.ellipse(x, y, rad, rad, 0, Math.random(0, Math.PI * 2), false);
+  ctx.fill();
+}
