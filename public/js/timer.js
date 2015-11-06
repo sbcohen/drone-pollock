@@ -1,7 +1,7 @@
-var deadline = new Date ('2015', '10', '08', '11', '00');
+var deadline = new Date ('2015', '10', '08', '16', '00');
 
 function getTimeRemaining(endtime) {
-  var t = Date.parse(endtime) - Date.parse(new Date());
+  var t = Date.parse(endtime) - Date.parse(new Date()) - (endtime.getTimezoneOffset() * 60000);
   var seconds = Math.max(Math.floor((t / 1000) % 60), 0);
   var minutes = Math.max(Math.floor((t / 1000 / 60) % 60), 0);
   var hours = Math.max(Math.floor((t / (1000 * 60 * 60)) % 24), 0);
