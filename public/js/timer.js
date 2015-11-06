@@ -1,4 +1,4 @@
-var deadline = '2015-11-08 11:00:00 GMT-05:00';
+var deadline = new Date ('2015', '10', '08', '11', '00');
 
 function getTimeRemaining(endtime) {
   var t = Date.parse(endtime) - Date.parse(new Date());
@@ -16,11 +16,11 @@ function getTimeRemaining(endtime) {
 
 var clock = document.getElementById('clockdiv');
 
-setTime();
+updateTime();
 
-function setTime() {
+function updateTime() {
   clock.innerHTML = getTimeRemaining(deadline);
   var t = Date.parse(deadline) - Date.parse(new Date());
   if (t <= -1000) window.location.reload();
 }
-setInterval(setTime, 500);
+setInterval(updateTime, 500);
