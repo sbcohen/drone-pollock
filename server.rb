@@ -37,7 +37,7 @@ def get_current
 end
   
 def get_password
-  File.foreach('password').first(1)[0]
+  File.foreach('password').first(1)[0].strip
 end 
 
 post '/drops/reset' do
@@ -49,10 +49,9 @@ end
 post '/drops/next' do
   halt 403 unless params["password"] == get_password
   @current = get_current + 1
-  File.open('current', 'w') do |file| 
-    file.write(@current)
-  end
-  json Drop.get(@current)
+  drop = Drop.get(@current)
+  File.open('current', 'w') { |file| file.write(@current) } if drop
+  json drop
 end
 
 #drop current page
