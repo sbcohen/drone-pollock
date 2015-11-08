@@ -51,6 +51,22 @@
   <link rel="stylesheet" href="./css/style.css">
 
   <!-- Google Analytics -->
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-57203187-5', 'auto');
+    ga('send', 'pageview');
+  </script>
 
 </head>
 
@@ -97,15 +113,22 @@
   <hr>
   <section id="diagram">
     <div>
-      <h2>Leave your Mark</h2>
+      <h2>Leave Your Mark</h2>
     </div>
     <div class="content">
-      <h3>Pick a point on the map below to remotely fly a drone and drop paint on our 20ft canvas!</h3>
+      <h3>Pick a point on the map below to remotely fly a drone and splatter paint on our 15ft canvas!</h3>
     </div>
+
     <div id="paintmap" class="paintmap">
+      <img src="./img/painter-left.svg" class="painter paint-person-left">
       <!-- cmyk by iconsmind.com from the Noun Project -->
-      <div id="cursor"></div>
-      <img src="./img/technica-logo-gray.svg">
+      <div class="cursor-wrapper">
+        <div id="cursor"></div>
+      </div>
+
+      <img src="./img/technica-logo-gray.svg" class="hide">
+      <img src="./img/painter-right.svg" class="painter paint-person-right">
+
       <canvas id="canvas">
       </canvas>
     </div>
@@ -124,7 +147,7 @@
         </div>
         <input type="hidden" id="xcoord" name="xcoord">
         <input type="hidden" id="ycoord" name="ycoord">
-        <button type="submit" class="button register-button">Drop!</button>
+        <button type="submit" class="button register-button">Flip!</button>
       </form>
     </div>
     <div id="success" style="display:none">
@@ -139,25 +162,25 @@
       <div class="section-header">
         <h2>Sponsored By</h2>
       </div>
-      <div class="logos">
-        <ul>
-          <li>
-            <a href="https://mlh.io" target="_blank"><img src="img/mlh-logo.svg"></a>
-          </li>
-          <li>
-            <a href="http://startupshell.org" target="_blank"><img src="img/shell-logo_text-color.svg"></a>
-          </li>
-          <li>
-            <a href="http://www.thedchive.com/"><img src="img/hive-logo.png"></a>
-          </li>
-          <li>
-            <a href="http://www.upperstack.com/"><img src="img/logo_upperstack.svg"></a>
-          </li>
-        </ul>
+      <div class="content view-project">
+        <div class="logos">
+          <ul>
+            <li>
+              <a href="https://mlh.io" target="_blank"><img src="img/mlh-logo.svg"></a>
+            </li>
+            <li>
+              <a href="http://startupshell.org" target="_blank"><img src="img/shell-logo_text-color.svg"></a>
+            </li>
+            <li>
+              <a href="http://www.thedchive.com/"><img src="img/hive-logo.png"></a>
+            </li>
+            <li>
+              <a href="http://www.upperstack.com/"><img src="img/logo_upperstack.svg"></a>
+            </li>
+          </ul>
+        </div>
+        <a href="https://github.com/sbcohen/drone-pollock">View project on Github</a>
       </div>
-    </div>
-    <div class="content view-project">
-      <a href="https://github.com/sbcohen/drone-pollock">View project on Github</a>
     </div>
   </footer>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
