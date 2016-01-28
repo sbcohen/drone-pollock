@@ -337,20 +337,35 @@
   
   .paintmap {
     display: inline-block;
-    padding: 13% 9%;
     box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
     margin: 20px 0;
     box-sizing: border-box;
-    max-height: 320px;
+    max-height: 400px;
     max-width: 600px;
     position: relative;
-    cursor: crosshair;
     background: white;
   }
   /*.paintmap img {
   position: relative;
   z-index: 1;
 }*/
+  
+  .slideshow {
+    max-width: 70%;
+    max-height: 400px;
+    width: 600px;
+    margin: 20px auto 20px;
+  }
+  
+  .slick-prev:before,
+  .slick-next:before {
+    color: #ff7bac !important;
+  }
+  
+  .slick-prev:hover,
+  .slick-next:hover {
+    border: none;
+  }
   
   #diagram {
     text-align: center;
@@ -788,6 +803,10 @@
   .hero h1 {
     text-align: center;
     margin-bottom: 1.25rem;
+  }
+  
+  .hero a {
+    text-decoration: none;
   }
   
   .hero h3 {
@@ -1241,12 +1260,12 @@
   
   .paint-person-left {
     position: absolute;
-    left: -170px;
+    left: 35px;
   }
   
   .paint-person-right {
     position: absolute;
-    left: 90%;
+    left: 79%;
   }
   
   .cursor-wrapper {
@@ -1256,4 +1275,21 @@
     left: 0;
     overflow: hidden;
     position: absolute;
+  }
+  
+  .participants {
+    margin: 20px;
+  }
+  
+  .table {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .table thead {
+    margin: 0 auto;
+  }
+  
+  .table tbody {
+    margin: 0 auto;
   }
